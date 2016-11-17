@@ -1,6 +1,5 @@
 
---
---import Network 
+--Jack Skehan 12301561
 import Network
 import System.IO
 import System.Environment (getArgs)
@@ -22,7 +21,7 @@ talk h port host s= do
     if line == "KILL_SERVICE"                                           -- Then it checks whether the client sent "end".
        then sClose s
     else if line =="HELO text"
-       then hPutStrLn h ("HELO text\nIP:" ++ host ++ "\nPort:" ++ (show port)++"\nStudentID:12301561\n" ) 
+       then hPutStr h ("HELO text" ++ "\n" ++ "IP:" ++ host ++ "\n" ++ "Port:" ++ (show port) ++"\n" ++ "StudentID:12301561" ++ "\n" ) 
     else do hPutStrLn h ("im still a skeleton") -- If not, we attempt to interpret the line as an integer and output double it.
     loop                                            -- Finally, we call loop again to read the next request.
 
